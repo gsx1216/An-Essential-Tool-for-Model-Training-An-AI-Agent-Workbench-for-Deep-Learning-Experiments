@@ -1,0 +1,20 @@
+{
+  "runner_smoke": {
+    "path": "runner_smoke.py",
+    "sha256": "cb604c45f81539934538d93b824b3a9e37609426212a8b222f33b7bd57797955",
+    "parameters": {
+      "epochs": {
+        "type": "int",
+        "min": 1,
+        "max": 5
+      },
+      "delay_seconds": {
+        "type": "float",
+        "min": 0,
+        "max": 1
+      }
+    },
+    "max_runtime_seconds": 60,
+    "max_log_bytes": 65536
+  }
+}

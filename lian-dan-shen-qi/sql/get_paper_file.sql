@@ -1,0 +1,1 @@
+SELECT f.pdf_bytes,p.file_sha256,p.file_bytes FROM experiment_assistant.paper_files f JOIN experiment_assistant.papers p ON p.id=f.paper_id AND p.user_id=f.user_id WHERE f.user_id=%s AND f.paper_id=%s;

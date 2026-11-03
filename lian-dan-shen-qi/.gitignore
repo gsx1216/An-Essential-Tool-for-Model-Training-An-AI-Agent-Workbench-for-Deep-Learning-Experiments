@@ -1,0 +1,53 @@
+# 本机环境与密钥；公开示例仍可提交
+.env
+.env.*
+*.env
+!*.env.example
+!.env.example
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# 真实部署配置（对应 *.example.json 保留）
+/config/runner_scripts.json
+/config/revision_scripts.json
+/config/metric_scripts.json
+/config/code_change_checks.json
+/config/ssh_allowed_networks.json
+
+# 用户资料、诊断、备份与运行日志
+/data/
+/logs/
+*.log
+*.log.*
+
+# Python 环境及缓存
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.egg-info/
+
+# 测试覆盖率与打包产物
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+build/
+dist/
+
+# 编辑器、系统与临时文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+/tmp/
+/temp/

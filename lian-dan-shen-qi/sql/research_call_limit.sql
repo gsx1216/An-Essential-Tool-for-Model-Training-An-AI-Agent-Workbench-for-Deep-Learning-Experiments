@@ -1,0 +1,1 @@
+SELECT CHECK_CLAUSE FROM information_schema.CHECK_CONSTRAINTS WHERE CONSTRAINT_SCHEMA='experiment_assistant' AND CONSTRAINT_NAME='ck_chat_tool_index';

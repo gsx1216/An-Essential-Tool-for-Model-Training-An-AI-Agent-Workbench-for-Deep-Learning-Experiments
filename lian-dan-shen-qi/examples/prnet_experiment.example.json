@@ -1,0 +1,39 @@
+{
+  "title": "PRNet Runner integration",
+  "kind": "training",
+  "description": "Explicitly started registered PRNet run; independent source snapshot and artifacts.",
+  "evaluation": {
+    "datasets": [
+      {
+        "display_name": "PRNet configured dataset",
+        "id": "tiny_cod",
+        "version": "existing-subset-977train-649test-20261026"
+      }
+    ],
+    "implementation": "PRNet original four-output BCE+IoU training; test sums logits, resizes to mask size, sigmoid and per-image min-max normalization. Metrics extracted from original epoch log; loss rounded to four decimals.",
+    "metrics": [
+      {
+        "definition": "Original logged mean of four BCE+IoU losses, rounded to four decimals.",
+        "direction": "minimize",
+        "display_name": "Mean training loss",
+        "max_value": null,
+        "min_value": 0.0,
+        "name": "loss",
+        "unit": "dimensionless"
+      },
+      {
+        "definition": "Original test script per-image normalized prediction MAE averaged over the configured test set.",
+        "direction": "minimize",
+        "display_name": "Test mean absolute error",
+        "max_value": 1.0,
+        "min_value": 0.0,
+        "name": "mae",
+        "unit": "ratio"
+      }
+    ],
+    "primary_metric": "mae",
+    "protocol_id": "prnet-original-log",
+    "protocol_version": "adapter-v1",
+    "task_type": "camouflaged_object_detection"
+  }
+}

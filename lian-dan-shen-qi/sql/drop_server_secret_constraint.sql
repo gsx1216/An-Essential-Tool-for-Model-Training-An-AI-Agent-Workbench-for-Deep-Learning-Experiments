@@ -1,0 +1,1 @@
+ALTER TABLE experiment_assistant.server_connections DROP CHECK ck_servers_secret;

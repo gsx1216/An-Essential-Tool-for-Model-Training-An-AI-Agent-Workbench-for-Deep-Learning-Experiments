@@ -1,0 +1,41 @@
+{
+  "name": "我的训练项目",
+  "experiment_id": "00000000-0000-4000-8000-000000000001",
+  "server_id": "00000000-0000-4000-8000-000000000002",
+  "project": {
+    "entrypoint": "train.py",
+    "python": "python3",
+    "arguments": [
+      "--epochs",
+      "{epochs}",
+      "--lr",
+      "{learning_rate}",
+      "--output",
+      "{artifact_dir}"
+    ],
+    "parameter_rules": {
+      "epochs": {
+        "type": "int",
+        "required": true,
+        "min": 1,
+        "max": 200
+      },
+      "learning_rate": {
+        "type": "float",
+        "required": true,
+        "min": 1e-06,
+        "max": 1.0
+      }
+    },
+    "cuda_visible_devices": null,
+    "metric_rules": [],
+    "exclude_directories": [
+      "datasets"
+    ],
+    "max_runtime_seconds": 86400
+  },
+  "default_parameters": {
+    "epochs": 20,
+    "learning_rate": 0.001
+  }
+}

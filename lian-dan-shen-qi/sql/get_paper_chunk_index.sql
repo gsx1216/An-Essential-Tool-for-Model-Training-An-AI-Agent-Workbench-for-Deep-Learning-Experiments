@@ -1,0 +1,1 @@
+SELECT c.*,p.title,p.file_sha256,p.chunk_count FROM experiment_assistant.paper_chunks c JOIN experiment_assistant.papers p ON p.id=c.paper_id AND p.user_id=c.user_id WHERE c.user_id=%s AND c.paper_id=%s AND c.chunk_index=%s AND p.status='ready';

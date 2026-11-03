@@ -1,0 +1,163 @@
+{
+  "camouflaged_object_detection": {
+    "title": "camouflaged_object_detection demo",
+    "kind": "training",
+    "description": "Only a configuration example; replace protocol, dataset versions and metric definitions with your actual evaluator.",
+    "evaluation": {
+      "task_type": "camouflaged_object_detection",
+      "protocol_id": "team-evaluator",
+      "protocol_version": "demo-v1",
+      "implementation": "Replace with evaluator repository + exact commit and evaluation options. Examples are not official benchmark presets.",
+      "datasets": [
+        {
+          "id": "cod10k",
+          "display_name": "cod10k",
+          "version": "demo-v1-replace-with-actual-release"
+        },
+        {
+          "id": "camo",
+          "display_name": "CAMO",
+          "version": "demo-v1-replace-with-actual-release"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "sm",
+          "display_name": "S-measure",
+          "unit": "ratio",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 1,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        },
+        {
+          "name": "em_max",
+          "display_name": "Maximum E-measure",
+          "unit": "ratio",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 1,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        },
+        {
+          "name": "wfm",
+          "display_name": "Weighted F-measure",
+          "unit": "ratio",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 1,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        },
+        {
+          "name": "mae",
+          "display_name": "MAE",
+          "unit": "ratio",
+          "direction": "minimize",
+          "min_value": 0,
+          "max_value": 1,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        }
+      ],
+      "primary_metric": "sm"
+    }
+  },
+  "object_tracking": {
+    "title": "object_tracking demo",
+    "kind": "training",
+    "description": "Only a configuration example; replace protocol, dataset versions and metric definitions with your actual evaluator.",
+    "evaluation": {
+      "task_type": "object_tracking",
+      "protocol_id": "team-evaluator",
+      "protocol_version": "demo-v1",
+      "implementation": "Replace with evaluator repository + exact commit and evaluation options. Examples are not official benchmark presets.",
+      "datasets": [
+        {
+          "id": "tracking_demo",
+          "display_name": "tracking_demo",
+          "version": "demo-v1-replace-with-actual-release"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "hota",
+          "display_name": "HOTA",
+          "unit": "percent",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 100,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        },
+        {
+          "name": "idf1",
+          "display_name": "IDF1",
+          "unit": "percent",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 100,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        }
+      ],
+      "primary_metric": "hota"
+    }
+  },
+  "object_detection": {
+    "title": "object_detection demo",
+    "kind": "training",
+    "description": "Only a configuration example; replace protocol, dataset versions and metric definitions with your actual evaluator.",
+    "evaluation": {
+      "task_type": "object_detection",
+      "protocol_id": "team-evaluator",
+      "protocol_version": "demo-v1",
+      "implementation": "Replace with evaluator repository + exact commit and evaluation options. Examples are not official benchmark presets.",
+      "datasets": [
+        {
+          "id": "detection_demo",
+          "display_name": "detection_demo",
+          "version": "demo-v1-replace-with-actual-release"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "map",
+          "display_name": "mAP",
+          "unit": "ratio",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 1,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        }
+      ],
+      "primary_metric": "map"
+    }
+  },
+  "point_cloud_segmentation": {
+    "title": "point_cloud_segmentation demo",
+    "kind": "training",
+    "description": "Only a configuration example; replace protocol, dataset versions and metric definitions with your actual evaluator.",
+    "evaluation": {
+      "task_type": "point_cloud_segmentation",
+      "protocol_id": "team-evaluator",
+      "protocol_version": "demo-v1",
+      "implementation": "Replace with evaluator repository + exact commit and evaluation options. Examples are not official benchmark presets.",
+      "datasets": [
+        {
+          "id": "point_cloud_demo",
+          "display_name": "point_cloud_demo",
+          "version": "demo-v1-replace-with-actual-release"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "miou",
+          "display_name": "mIoU",
+          "unit": "percent",
+          "direction": "maximize",
+          "min_value": 0,
+          "max_value": 100,
+          "definition": "Example declaration. Confirm scale and definition from your evaluator."
+        }
+      ],
+      "primary_metric": "miou"
+    }
+  }
+}

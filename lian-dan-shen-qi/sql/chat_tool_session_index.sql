@@ -1,0 +1,1 @@
+SELECT SEQ_IN_INDEX,COLUMN_NAME,NON_UNIQUE FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='experiment_assistant' AND TABLE_NAME='chat_sessions' AND INDEX_NAME='uq_chat_session_identity_owner' ORDER BY SEQ_IN_INDEX;

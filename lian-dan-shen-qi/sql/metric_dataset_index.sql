@@ -1,0 +1,1 @@
+SELECT SEQ_IN_INDEX, COLUMN_NAME, NON_UNIQUE FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = 'experiment_assistant' AND TABLE_NAME = 'run_metric_events' AND INDEX_NAME = 'idx_metrics_run_dataset_split' ORDER BY SEQ_IN_INDEX;

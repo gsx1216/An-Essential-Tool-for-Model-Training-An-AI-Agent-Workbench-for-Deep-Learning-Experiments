@@ -1,0 +1,4 @@
+SELECT DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE
+FROM information_schema.COLUMNS
+WHERE TABLE_SCHEMA = 'experiment_assistant'
+  AND TABLE_NAME = 'users' AND COLUMN_NAME = 'password_hash';

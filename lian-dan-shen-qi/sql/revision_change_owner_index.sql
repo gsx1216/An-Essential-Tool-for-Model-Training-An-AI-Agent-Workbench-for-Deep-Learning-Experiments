@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA='experiment_assistant' AND TABLE_NAME='code_changes' AND INDEX_NAME='uq_code_change_owner';

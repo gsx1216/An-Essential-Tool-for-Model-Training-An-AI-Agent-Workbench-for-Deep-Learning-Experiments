@@ -1,0 +1,329 @@
+{
+  "date": "2026-10-26",
+  "temporary_database_removed": true,
+  "paid_model_calls": 0,
+  "chat_gateway": "mocked; actual run/report tools called",
+  "run_id": "536f261de0344760a436d620cbe764af",
+  "job_id": "79724eec23c54368b5bde11b5f2ec48b",
+  "remote_job": "/mnt/Data/HOME/gsx/PRNet/.experiment-assistant/79724eec23c54368b5bde11b5f2ec48b",
+  "adapter_path": "/mnt/Data/HOME/gsx/PRNet/assistant_adapters/prnet_130a55b9a456ac99.py",
+  "adapter_sha256": "130a55b9a456ac99dc0761bd19529ff62aae5199bdcc609bb224faceb828b5e9",
+  "parameters": {
+    "epochs": 1,
+    "batch_size": 4,
+    "learning_rate": 5e-05
+  },
+  "execution": {
+    "run_id": "536f261de0344760a436d620cbe764af",
+    "server_id": "ebfa4382a0914c2dae572c35d75903eb",
+    "script_id": "prnet_train",
+    "status": "succeeded",
+    "exit_code": 0,
+    "error_code": null,
+    "created_at": "2026-10-26T11:52:28.336393Z",
+    "checked_at": "2026-10-26T11:53:43.620636Z"
+  },
+  "report": {
+    "version": 1,
+    "generated_at": "2026-10-26T11:53:45.072955Z",
+    "is_stale": false,
+    "data": {
+      "collection_complete": true,
+      "counts": {
+        "ignored": 17,
+        "invalid": 0,
+        "oversized": 0,
+        "regressions": 0,
+        "valid": 2
+      },
+      "error_code": null,
+      "evaluation": {
+        "datasets": [
+          {
+            "display_name": "PRNet configured dataset",
+            "id": "tiny_cod",
+            "version": "existing-subset-977train-649test-20261026"
+          }
+        ],
+        "implementation": "PRNet original four-output BCE+IoU training; test sums logits, resizes to mask size, sigmoid and per-image min-max normalization. Metrics extracted from original epoch log; loss rounded to four decimals.",
+        "metrics": [
+          {
+            "definition": "Original logged mean of four BCE+IoU losses, rounded to four decimals.",
+            "direction": "minimize",
+            "display_name": "Mean training loss",
+            "max_value": null,
+            "min_value": 0.0,
+            "name": "loss",
+            "unit": "dimensionless"
+          },
+          {
+            "definition": "Original test script per-image normalized prediction MAE averaged over the configured test set.",
+            "direction": "minimize",
+            "display_name": "Test mean absolute error",
+            "max_value": 1.0,
+            "min_value": 0.0,
+            "name": "mae",
+            "unit": "ratio"
+          }
+        ],
+        "primary_metric": "mae",
+        "protocol_id": "prnet-original-log",
+        "protocol_version": "adapter-v1",
+        "task_type": "camouflaged_object_detection"
+      },
+      "exit_code": 0,
+      "experiment_id": "e768bf2a4f204482a984cb235fcbf5d0",
+      "finished_at": "2026-10-26T11:53:43.620045+00:00",
+      "interpretation": "仅汇总脚本上报数值，不据此认定收敛、泛化改善或异常原因。",
+      "kind": "training",
+      "parameters": {
+        "batch_size": 4,
+        "epochs": 1,
+        "learning_rate": 5e-05
+      },
+      "run_id": "536f261de0344760a436d620cbe764af",
+      "schema_version": 2,
+      "series": [
+        {
+          "dataset": "tiny_cod",
+          "dataset_definition_id": "tiny_cod",
+          "delta": 0.0,
+          "first_step": 1,
+          "first_value": 0.027058536180191436,
+          "is_primary_metric": true,
+          "last_epoch": 1,
+          "last_source_offset": 1752,
+          "last_step": 1,
+          "last_value": 0.027058536180191436,
+          "max_value": 0.027058536180191436,
+          "metric_definition_name": "mae",
+          "metric_name": "mae",
+          "min_value": 0.027058536180191436,
+          "observed_best_value": 0.027058536180191436,
+          "points": 1,
+          "quality_flags": [],
+          "split": "test"
+        },
+        {
+          "dataset": "tiny_cod",
+          "dataset_definition_id": "tiny_cod",
+          "delta": 0.0,
+          "first_step": 1,
+          "first_value": 4.584,
+          "is_primary_metric": false,
+          "last_epoch": 1,
+          "last_source_offset": 1308,
+          "last_step": 1,
+          "last_value": 4.584,
+          "max_value": 4.584,
+          "metric_definition_name": "loss",
+          "metric_name": "loss",
+          "min_value": 4.584,
+          "observed_best_value": 4.584,
+          "points": 1,
+          "quality_flags": [],
+          "split": "train"
+        }
+      ],
+      "source_offset": 1951,
+      "started_at": "2026-10-26T11:52:29.421560+00:00",
+      "status": "succeeded",
+      "title": "PRNet Runner integration",
+      "warnings": []
+    }
+  },
+  "verification": {
+    "strict_load_ok": true,
+    "state_tensor_entries": 551,
+    "all_floating_tensors_finite": true,
+    "original_files_unchanged": true,
+    "adapter_hash_verified": true,
+    "source_snapshot_verified": true,
+    "cpu_only_verification": true,
+    "gpu0_after": "0, 8 MiB, 0 %"
+  },
+  "checkpoint": {
+    "epochs": 1,
+    "metrics": [
+      {
+        "type": "metric",
+        "dataset": "tiny_cod",
+        "split": "train",
+        "step": 1,
+        "epoch": 1,
+        "loss": 4.584
+      },
+      {
+        "type": "metric",
+        "dataset": "tiny_cod",
+        "split": "test",
+        "step": 1,
+        "epoch": 1,
+        "mae": 0.027058536180191436
+      }
+    ],
+    "checkpoint": "last.pth",
+    "checkpoint_sha256": "dc6f4e874e3a45a46a64fbfa5b8a2fc2f48421aa14c2edd03b5954a04070f95c",
+    "checkpoint_bytes": 53361123,
+    "source_sha256": {
+      "PRNet_train_cod.py": "6a8426fa55c4e784a767e3448c41bca36d41e73af724ab84fa4ac19ba0539bf8",
+      "options_cod.py": "10a2365c122a29b91b452835cb78264f902fa5efa8141c3c06f5b673d05b207a",
+      "data_cod.py": "e434fff1e8cd04771e9dd53e49c962ecbd62b25665c6452c727d152cd50fc57f",
+      "utils.py": "f54d23df961003798226b90a5a5004af1aacf25f91e3949d6175631c178065c6",
+      "models/PRNet.py": "7823c1222d966164dcdae6540bb9fe787379144205016eaba8c3af8af466d5fd",
+      "models/smt.py": "022cb26ac60ceda52e10cd63c80e32fa958f00f665c62aa1b5a7e678b9dec140",
+      "pretrained.pth": "3e3d011c81b809f3d4934d04e8a7012247a45c9ba269a00a178ef53bcc3f84e8"
+    },
+    "dataset_id": "tiny_cod",
+    "dataset_version": "existing-subset-977train-649test-20261026"
+  },
+  "provenance": {
+    "adapter_sha256": "130a55b9a456ac99dc0761bd19529ff62aae5199bdcc609bb224faceb828b5e9",
+    "deployment": {
+      "dataset_id": "tiny_cod",
+      "dataset_version": "existing-subset-977train-649test-20261026",
+      "gpu_id": 0,
+      "max_batch_size": 4,
+      "max_epochs": 1,
+      "minimum_free_gpu_mib": 6000,
+      "pretrained": "smt_tiny.pth",
+      "project_root": "/mnt/Data/HOME/gsx/PRNet",
+      "python": "/mnt/Data/HOME/gsx/miniconda3/envs/mynet/bin/python",
+      "source_sha256": {
+        "PRNet_train_cod.py": "6a8426fa55c4e784a767e3448c41bca36d41e73af724ab84fa4ac19ba0539bf8",
+        "data_cod.py": "e434fff1e8cd04771e9dd53e49c962ecbd62b25665c6452c727d152cd50fc57f",
+        "models/PRNet.py": "7823c1222d966164dcdae6540bb9fe787379144205016eaba8c3af8af466d5fd",
+        "models/smt.py": "022cb26ac60ceda52e10cd63c80e32fa958f00f665c62aa1b5a7e678b9dec140",
+        "options_cod.py": "10a2365c122a29b91b452835cb78264f902fa5efa8141c3c06f5b673d05b207a",
+        "utils.py": "f54d23df961003798226b90a5a5004af1aacf25f91e3949d6175631c178065c6"
+      },
+      "test_images": "tiny_COD/test/Imgs2",
+      "test_masks": "tiny_COD/test/GT2",
+      "train_images": "tiny_COD/train/Imgs2",
+      "train_masks": "tiny_COD/train/GT2"
+    },
+    "parameters": {
+      "batch_size": 4,
+      "epochs": 1,
+      "learning_rate": 5e-05
+    },
+    "source_sha256": {
+      "PRNet_train_cod.py": "6a8426fa55c4e784a767e3448c41bca36d41e73af724ab84fa4ac19ba0539bf8",
+      "options_cod.py": "10a2365c122a29b91b452835cb78264f902fa5efa8141c3c06f5b673d05b207a",
+      "data_cod.py": "e434fff1e8cd04771e9dd53e49c962ecbd62b25665c6452c727d152cd50fc57f",
+      "utils.py": "f54d23df961003798226b90a5a5004af1aacf25f91e3949d6175631c178065c6",
+      "models/PRNet.py": "7823c1222d966164dcdae6540bb9fe787379144205016eaba8c3af8af466d5fd",
+      "models/smt.py": "022cb26ac60ceda52e10cd63c80e32fa958f00f665c62aa1b5a7e678b9dec140",
+      "pretrained.pth": "3e3d011c81b809f3d4934d04e8a7012247a45c9ba269a00a178ef53bcc3f84e8"
+    },
+    "datasets": {
+      "train": {
+        "count": 977,
+        "inventory_sha256": "8830b2ac4fecbfd0adee0c65d4e4166c9486871c04e398885416ccfe7e05c6f4",
+        "inventory_scope": "filenames_and_sizes_not_full_file_contents"
+      },
+      "test": {
+        "count": 649,
+        "inventory_sha256": "d4d156c45df19e12c59d04a6e143312cd12ce6ddf91997a7f224f5ac63acff67",
+        "inventory_scope": "filenames_and_sizes_not_full_file_contents"
+      }
+    },
+    "trainsize": 384,
+    "epoch_argument": 2,
+    "metric_precision": {
+      "loss": "original log rounded to 4 decimals",
+      "mae": "original test log float"
+    }
+  },
+  "remote_files": [
+    {
+      "path": "artifacts/PRNet.log",
+      "bytes": 1355
+    },
+    {
+      "path": "artifacts/last.pth",
+      "bytes": 53361123
+    },
+    {
+      "path": "artifacts/metrics.jsonl",
+      "bytes": 187
+    },
+    {
+      "path": "artifacts/provenance.json",
+      "bytes": 2528
+    },
+    {
+      "path": "artifacts/result.json",
+      "bytes": 1234
+    },
+    {
+      "path": "artifacts/source/PRNet_train_cod.py",
+      "bytes": 7599
+    },
+    {
+      "path": "artifacts/source/data_cod.py",
+      "bytes": 7299
+    },
+    {
+      "path": "artifacts/source/models/PRNet.py",
+      "bytes": 10445
+    },
+    {
+      "path": "artifacts/source/models/smt.py",
+      "bytes": 18203
+    },
+    {
+      "path": "artifacts/source/options_cod.py",
+      "bytes": 1574
+    },
+    {
+      "path": "artifacts/source/pretrained.pth",
+      "bytes": 138543074
+    },
+    {
+      "path": "artifacts/source/utils.py",
+      "bytes": 491
+    },
+    {
+      "path": "artifacts/summary/events.out.tfevents.1793015448.hbu-System-Product-Name",
+      "bytes": 1492490
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 807
+    },
+    {
+      "path": "output.log",
+      "bytes": 1951
+    },
+    {
+      "path": "parameters.json",
+      "bytes": 49
+    },
+    {
+      "path": "request.lock",
+      "bytes": 0
+    },
+    {
+      "path": "state.json",
+      "bytes": 139
+    },
+    {
+      "path": "supervisor.py",
+      "bytes": 13053
+    },
+    {
+      "path": "worker.lock",
+      "bytes": 0
+    }
+  ],
+  "training_log": "[2026-10-26 07:50:48 PM-PRNet_train_cod.py-INFO:PRNet-Train_4_pairs]\n[2026-10-26 07:50:48 PM-PRNet_train_cod.py-INFO:Total Parameters (For Reference): 13290440]\n[2026-10-26 07:50:48 PM-PRNet_train_cod.py-INFO:Config]\n[2026-10-26 07:50:48 PM-PRNet_train_cod.py-INFO:epoch:2;lr:5e-05;batchsize:4;trainsize:384;clip:0.5;decay_rate:0.1;load:/mnt/Data/HOME/gsx/PRNet/.experiment-assistant/79724eec23c54368b5bde11b5f2ec48b/artifacts/source/pretrained.pth;save_path:/mnt/Data/HOME/gsx/PRNet/.experiment-assistant/79724eec23c54368b5bde11b5f2ec48b/artifacts/;decay_epoch:100]\n[2026-10-26 07:50:53 PM-PRNet_train_cod.py-INFO:#TRAIN#:Epoch [001/002], Step [0001/0244], LR:0.0000500,  sal_loss:6.686544 , mem_use:4023MB]\n[2026-10-26 07:51:08 PM-PRNet_train_cod.py-INFO:#TRAIN#:Epoch [001/002], Step [0100/0244], LR:0.0000500,  sal_loss:4.648886 , mem_use:4023MB]\n[2026-10-26 07:51:22 PM-PRNet_train_cod.py-INFO:#TRAIN#:Epoch [001/002], Step [0200/0244], LR:0.0000500,  sal_loss:6.548003 , mem_use:4023MB]\n[2026-10-26 07:51:29 PM-PRNet_train_cod.py-INFO:#TRAIN#:Epoch [001/002], Step [0244/0244], LR:0.0000500,  sal_loss:3.969275 , mem_use:4023MB]\n[2026-10-26 07:51:29 PM-PRNet_train_cod.py-INFO:#TRAIN#:Epoch [001/002],Loss_AVG: 4.5840]\n[2026-10-26 07:51:55 PM-PRNet_train_cod.py-INFO:#TEST#:Epoch:1 MAE:0.027058536180191436 bestEpoch:0 bestMAE:0.027058536180191436]\n",
+  "metrics_jsonl": "{\"type\":\"metric\",\"dataset\":\"tiny_cod\",\"split\":\"train\",\"step\":1,\"epoch\":1,\"loss\":4.584}\n{\"type\":\"metric\",\"dataset\":\"tiny_cod\",\"split\":\"test\",\"step\":1,\"epoch\":1,\"mae\":0.027058536180191436}\n",
+  "tests": {
+    "unit": 1013,
+    "runner_http_mysql_loopback_ssh_groups": 8,
+    "server_groups": 10,
+    "metric_report_groups": 10,
+    "chat_tool_groups": 12
+  }
+}

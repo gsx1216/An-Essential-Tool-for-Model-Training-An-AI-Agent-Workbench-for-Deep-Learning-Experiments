@@ -1,0 +1,1 @@
+UPDATE experiment_assistant.papers SET status='failed',error_code=%s,lease_token=NULL,lease_until=NULL,updated_at=UTC_TIMESTAMP(6) WHERE user_id=%s AND id=%s AND status='processing' AND lease_token=%s AND lease_until>UTC_TIMESTAMP(6);

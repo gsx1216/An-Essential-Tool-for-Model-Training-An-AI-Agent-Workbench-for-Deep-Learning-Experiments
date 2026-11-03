@@ -1,0 +1,1 @@
+UPDATE experiment_assistant.code_changes SET status=%s,error_code=%s,lease_token=NULL,lease_until=NULL,updated_at=UTC_TIMESTAMP(6) WHERE id=%s AND user_id=%s AND lease_token=%s AND lease_until>UTC_TIMESTAMP(6);

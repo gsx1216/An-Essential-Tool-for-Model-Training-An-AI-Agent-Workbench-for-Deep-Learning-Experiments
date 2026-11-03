@@ -1,0 +1,10 @@
+{
+  "name": "PRNet training server",
+  "host": "10.61.52.182",
+  "port": 2222,
+  "username": "gsx",
+  "auth_method": "password",
+  "host_fingerprint": "SHA256:R860QwfpoN01weEh9e0XFREpdkg9o/Lt482B+9lIiVk",
+  "work_dir": "/mnt/Data/HOME/gsx/PRNet",
+  "password": "<enter in /docs; do not store real password in this file>"
+}

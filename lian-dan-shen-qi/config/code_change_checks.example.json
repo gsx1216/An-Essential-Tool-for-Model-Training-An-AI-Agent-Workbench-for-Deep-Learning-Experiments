@@ -1,0 +1,6 @@
+{
+  "your_registered_script_id": {
+    "checks": [],
+    "exclude_directories": ["training_data", "datasets"]
+  }
+}
